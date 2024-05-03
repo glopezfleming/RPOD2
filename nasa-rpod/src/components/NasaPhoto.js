@@ -1,13 +1,15 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 
+const apiKey = process.env.REACT_APP_NASA_key;
+
 const NasaPhoto = () => {
   const [photoData, setPhotoData] = useState(null);
 
   useEffect(() => {
     fetchPhoto();
     async function fetchPhoto(){
-      const res = await fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=eflHIihBHCXPdWPKDAIGGbARvyn9fs4LPqT2JKsz");
+      const res = await fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${apiKey}");
       const data = await res.json();
       console.log(data);
       setPhotoData(data);
