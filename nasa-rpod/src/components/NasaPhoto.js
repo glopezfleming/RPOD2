@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import NavBar from "./NavBar"
 
-const apiKey = process.env.REACT_APP_NASA_key;
+const apiKey = process.env.REACT_APP_NASA_KEY;
 
 const NasaPhoto = () => {
   const [photoData, setPhotoData] = useState(null);
@@ -9,7 +10,7 @@ const NasaPhoto = () => {
   useEffect(() => {
     fetchPhoto();
     async function fetchPhoto(){
-      const res = await fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${apiKey}");
+      const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${apiKey}`);
       const data = await res.json();
       console.log(data);
       setPhotoData(data);
@@ -18,13 +19,16 @@ const NasaPhoto = () => {
 
 
 
-  if(!photoData) return<div>Not working!</div>
+  if(!photoData) return<div></div>
   return (
-    <div>
-      <img src = {photoData.latest_photos[0].img_src} alt = "something random"></img>
-      <h1>{photoData.latest_photos[0].rover.name} - ({photoData.latest_photos[0].camera.full_name}) </h1>
-      <p>Date Taken: {photoData.latest_photos[0].earth_date} - Sol: {photoData.latest_photos[0].sol}</p>
-    </div>
+    <>
+      <NavBar></NavBar>
+      <div>
+        <img src = {photoData.latest_photos[0].img_src} alt = "something random"></img>
+        <h1>{photoData.latest_photos[0].rover.name} - ({photoData.latest_photos[0].camera.full_name}) </h1>
+        <p>Date Taken: {photoData.latest_photos[0].earth_date} - Sol: {photoData.latest_photos[0].sol}</p>
+      </div>
+    </>
   )
 }
 
