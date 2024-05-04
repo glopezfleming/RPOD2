@@ -12,23 +12,26 @@ const NasaPhoto = () => {
     async function fetchPhoto(){
       const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${apiKey}`);
       const data = await res.json();
-      console.log(data);
-      setPhotoData(data);
+     
+      setPhotoData(data.latest_photos.slice(0,10));
+      console.log(photoData)
     }
   }, []);
 
 
 
-  if(!photoData) return<div></div>
+  if(!photoData) return<div>Loading...</div>
   return (
     <>
       <NavBar></NavBar>
       <div className = "wrapper">
-        <div className= "nasa-photo">
-          <img src = {photoData.latest_photos[0].img_src} alt = "something random" className = "photo"></img>
-          <h1 className = "camera-name">{photoData.latest_photos[0].camera.full_name} </h1>
-          <p className = "date">Date Taken: {photoData.latest_photos[0].earth_date} - Sol: {photoData.latest_photos[0].sol}</p>
-        </div>
+        {photoData.map((photo, index) => (
+          <div key = {index} className= "nasa-photo">
+            <img src = {photo.img_src} alt = {`Mars Photo ${index}`} className = "photo"></img>
+            <h1 className = "camera-name">{photo.camera.full_name} </h1>
+            <p className = "date">Date Taken: {photo.earth_date} - Sol: {photo.sol}</p>
+          </div>
+        ))}
       </div>
     </>
   )

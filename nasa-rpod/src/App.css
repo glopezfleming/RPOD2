@@ -34,21 +34,19 @@ body{
   display: flex;
   flex-direction: column; /* Stacks child elements vertically */
   align-items: center; /* Centers child elements horizontally */
-  padding: 25px;
+  padding: 15px;
   margin: 0 auto;
   max-height: 100%;
   overflow-y: auto;
 }
 
 .nasa-photo img{
-  width: 50%;
-  margin-right: 50px;
+  width: 70%;
   object-fit: contain;
   max-height: 80vh;
 }
 
 .nasa-photo h1{
-  
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -65,16 +63,15 @@ body{
     display: flex;
     flex-direction: column; /* Stacks child elements vertically */
     align-items: center; /* Centers child elements horizontally */
-    padding: 25px;
+    padding: 5px;
     margin: 0 auto;
     max-height: 100%;
     overflow-y: auto;
   }
 
   .nasa-photo img{
-    width: 100%;
+    width: 70%;
     margin-right: 0;
-    margin-bottom: 10px;
   }
 }
 
@@ -105,8 +102,8 @@ body{
 .wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 400px 400px;
-  gap: 10px;
+ 
+  gap: 1px;
 }
 
 .camera-name {
