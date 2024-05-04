@@ -13,10 +13,24 @@ const NasaPhoto = () => {
       const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?api_key=${apiKey}`);
       const data = await res.json();
      
-      setPhotoData(data.latest_photos.slice(0,10));
-      console.log(photoData)
+      const randomIndexes = getRandomIndexes(data.latest_photos.length, 20);
+      console.log(randomIndexes);
+      const selectedPhotos = randomIndexes.map(index => data.latest_photos[index]);
+      setPhotoData(selectedPhotos);
+      console.log(selectedPhotos);
     }
   }, []);
+
+  function getRandomIndexes(max, count){
+    const indexes = [];
+    while(indexes.length < count){
+      const randomIndex = Math.floor(Math.random() *max);
+      if(!indexes.includes(randomIndex)){
+        indexes.push(randomIndex);
+      }
+    }
+    return indexes;
+  }
 
 
 
