@@ -23,10 +23,12 @@ const NasaPhoto = () => {
   return (
     <>
       <NavBar></NavBar>
-      <div>
-        <img src = {photoData.latest_photos[0].img_src} alt = "something random"></img>
-        <h1>{photoData.latest_photos[0].rover.name} - ({photoData.latest_photos[0].camera.full_name}) </h1>
-        <p>Date Taken: {photoData.latest_photos[0].earth_date} - Sol: {photoData.latest_photos[0].sol}</p>
+      <div className = "wrapper">
+        <div className= "nasa-photo">
+          <img src = {photoData.latest_photos[0].img_src} alt = "something random" className = "photo"></img>
+          <h1 className = "camera-name">{photoData.latest_photos[0].camera.full_name} </h1>
+          <p className = "date">Date Taken: {photoData.latest_photos[0].earth_date} - Sol: {photoData.latest_photos[0].sol}</p>
+        </div>
       </div>
     </>
   )

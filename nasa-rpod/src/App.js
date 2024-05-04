@@ -7,11 +7,13 @@ import NasaPhoto from "./components/NasaPhoto";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="nasaphoto" element={<NasaPhoto />} />
-      </Routes>
+    <BrowserRouter className = "app">
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="nasaphoto" element={<NasaPhoto />} />
+        </Routes>
+      </div>
   </BrowserRouter>
   );
 }

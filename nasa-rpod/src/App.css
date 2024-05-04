@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+  font-family: 'Space Mono', monospace;
+  color: #CD5C5C;
+  line-height: 1.2;
+  font-size: 19px;
+  background-color: black;
+  background-image: url("https://media.istockphoto.com/id/498478219/photo/stars-at-night-sky.webp?b=1&s=170667a&w=0&k=20&c=h9OIWHvnqDfqgJp-6fwXcfitObtsEl1GowkqmF-mh44=")
+}
+
+.navbar{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+}
+
+.link{
+  color:white;
+  display: inline-block;
+  padding: 3px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease all;
+}
+
+.link:hover{
+  color: #CD5C5C;
+  transform: scale(1.1);
+}
+
+.nasa-photo{
+  display: flex;
+  flex-direction: column; /* Stacks child elements vertically */
+  align-items: center; /* Centers child elements horizontally */
+  padding: 25px;
+  margin: 0 auto;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.nasa-photo img{
+  width: 50%;
+  margin-right: 50px;
+  object-fit: contain;
+  max-height: 80vh;
+}
+
+.nasa-photo h1{
+  
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nasa-photo .date{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 10px;
+  flex-direction: column;
+}
+
+@media(max-width:1280px){
+  .nasa-photo{
+    display: flex;
+    flex-direction: column; /* Stacks child elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+    padding: 25px;
+    margin: 0 auto;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .nasa-photo img{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.home{
+  display:flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link{
+  font-size: 40px;
+  background: #CD5C5C;
+  display:inline-block;
+  padding: 40px 80px;
+  color : white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  text-transform: uppercase;
+}
+
+.home-link:hover{
+  border-radius: 5px;
+  background: #CD5C5C;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 10px;
+}
+
+.camera-name {
+  font-size: 20px; /* Set the font size only for h1 elements with the class camera-name */
+}
+

@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 
 const Home = () => {
   return (
-    <div>
-        <Link to="/nasaphoto">Mars Today!</Link>
+    <div className = "home">
+        <Link className = "home-link" to="/nasaphoto">Mars Today!</Link>
     </div>
   )
 }
